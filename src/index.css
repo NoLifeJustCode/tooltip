@@ -11,3 +11,80 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.tooltip{
+  position: relative;
+  width: fit-content;
+  box-sizing: border-box;
+  margin: auto;
+  cursor: pointer;
+  margin-top: 300px;
+  
+}
+.tooltip .tooltipText{
+  position: absolute;
+  background: wheat;
+  padding: 10px;
+  border-radius: .6em;
+  visibility: hidden;
+  width: max-content;
+  max-width: 150px;
+  transition: opacity 1s;
+  opacity: 0;
+  z-index: 1;
+}
+.tooltip:hover .tooltipText{
+  opacity: 1;
+  visibility: visible;
+}
+
+.tooltipText.left::after{
+  content: "";
+  position: absolute;
+  top: 0%;
+  left: 99%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: wheat transparent transparent transparent;
+}
+
+.tooltipText.right::after{
+  content: "";
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: wheat transparent transparent transparent;
+}
+
+.tooltipText.bottom::after{
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent wheat transparent;
+}
+
+.tooltipText.top::after{
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: wheat transparent transparent transparent;
+}
+.btn{
+  font-size: 1.5em;
+  text-transform: uppercase;
+  padding: 15px;
+  letter-spacing: 2px;
+  background-color: #2c75af;
+  color: #0c0908;
+}
